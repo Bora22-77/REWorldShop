@@ -6,6 +6,7 @@ import Promotion from './Pages/Promotion'
 import ShopCategory from './Pages/ShopCategory'
 import Product from './Pages/Product'
 import Footer from './Components/Footer/Footer'
+import Cart from './Pages/Cart'
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/product" element={ <Product/>}>
             <Route path=":productId" element={ <Product/>}/>
           </Route>
+          <Route path="/cart" element={<Cart/>}/>
           {/* <Route path="/product" element={<Product/>} /> */}
           {/* <Route path="/product/:productId" element={<Product/>}/> */}
         </Routes>

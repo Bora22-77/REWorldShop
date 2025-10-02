@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();
@@ -59,6 +58,7 @@ const Navbar = () => {
                 <option value="/laptops">Laptops</option>
               </select>
            <h1>{minutes}:{seconds < 10 ? "0" : ""}{seconds}</h1>
+          
           </div>
 
           {/* Mobile Menu Button */}

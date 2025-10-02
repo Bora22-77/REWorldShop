@@ -47,8 +47,8 @@ import { createContext, useContext, useState, useEffect } from "react";
 import fetchApi from "../utils/fetchApi";
 
 const ProductContext = createContext();
-
 export const ProductProvider = ({ children }) => {
+  //const [cartItems,setcartItems] = useState(getdefaulCart());
   // Load from localStorage first
   const [products, setProducts] = useState(() => {
     const saved = localStorage.getItem("products");
@@ -80,8 +80,14 @@ export const ProductProvider = ({ children }) => {
     </ProductContext.Provider>
   );
 };
-
 export default ProductContext;
 
 // Custom hook
 export const useProducts = () => useContext(ProductContext);
+// const getdefaulCart = () =>{
+//   let cart={};
+//   for(let i=0;i<useProducts.length+1;i++){
+//     cart[i]=0;
+//   }
+// }
+
