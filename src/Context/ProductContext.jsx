@@ -48,7 +48,6 @@ import fetchApi from "../utils/fetchApi";
 
 const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
-  //const [cartItems,setcartItems] = useState(getdefaulCart());
   // Load from localStorage first
   const [products, setProducts] = useState(() => {
     const saved = localStorage.getItem("products");
@@ -73,9 +72,24 @@ export const ProductProvider = ({ children }) => {
 
     getData();
   }, []);
+const getdefaulCart = () =>{
+  let cart={};
+  for(let i=0;i<products.length+1;i++){
+    cart[i]=0;
+  }
+}
+const [cartItems,setcartItems] = useState(getdefaulCart());
+const addToCart = (itemId) => {
+        setcartItems((prev)=>({...prev,[itemId]: (prev[itemId] || 0 )+1}));
+        console.log(cartItems);
+    }
+    const removeFromCart = (itemId) => {
+        setcartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+    }
+
 
   return (
-    <ProductContext.Provider value={{ products, setProducts, loading }}>
+    <ProductContext.Provider value={{ products, setProducts, loading,cartItems,addToCart,removeFromCart }}>
       {children}
     </ProductContext.Provider>
   );
@@ -84,10 +98,5 @@ export default ProductContext;
 
 // Custom hook
 export const useProducts = () => useContext(ProductContext);
-// const getdefaulCart = () =>{
-//   let cart={};
-//   for(let i=0;i<useProducts.length+1;i++){
-//     cart[i]=0;
-//   }
-// }
+
 

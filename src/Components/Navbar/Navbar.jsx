@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom'; 
+import cart from '../Assets/cart.jpg'
+import { BiCartAdd } from 'react-icons/bi';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();
@@ -58,7 +60,7 @@ const Navbar = () => {
                 <option value="/laptops">Laptops</option>
               </select>
            <h1>{minutes}:{seconds < 10 ? "0" : ""}{seconds}</h1>
-          
+          <Link className='text-3xl' to='/cart'><h2><BiCartAdd/></h2></Link>
           </div>
 
           {/* Mobile Menu Button */}

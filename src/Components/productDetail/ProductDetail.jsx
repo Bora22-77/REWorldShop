@@ -1,7 +1,9 @@
 import React from 'react'
 import star from '../Assets/star.png'
 import star_dull from '../Assets/star_dull.png'
+import { useProducts } from '../../Context/ProductContext'
 const ProductDetail = ({props}) => {
+  const {addToCart,removeFromCart}= useProducts();
   if (!props) { return <p>Loading product details...</p>;} // prevent crash
   return (
     <div className='flex'>
