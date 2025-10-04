@@ -6,7 +6,7 @@ import Iphone_hero from '../Assets/Iphone_hero.avif'
 const Hero = () => {
   return (
     <div>
-      <div className="hero font-serif bg-gradient-to-t from-blue-400 via-blue-300 to-purple-100  h-32 sm:h-48 md:h-64 lg:h-screen flex">
+      <div className="hero font-serif bg-gradient-to-t from-blue-400 via-blue-300 to-purple-100  h-32 sm:h-48 md:h-64 lg:h-screen  ">
         <div className="flex flex-col justify-center gap-5 pl-10 sm:pl-20 md:pl-28 lg:pl-36 xl:pl-44 leading-[1.1] flex-1">
           <h1 className='text-5xl font-bold text-gray-800 '>Welcome to RE World</h1>
           <h2 className='text-2xl font-bold text-red-900 ml-12'>We have Electronic products</h2>

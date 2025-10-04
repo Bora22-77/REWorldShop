@@ -39,13 +39,13 @@ const Navbar = () => {
   return (
     <div>
         
-    <nav className="bg-gray-500 text-white">
+    <nav className="bg-gray-500 text-white mb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
 
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h2 className="text-xl font-bold">RE-World</h2>
+            <h2 className="text-3xl font-bold">RE-World</h2>
           </div>
 
           {/* Desktop Menu */}
@@ -74,16 +74,23 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden px-4 pb-4 space-y-3">
-          <Link to='/' className="hover:text-gray-300">Home</Link>
-          <Link to='/promotion' className="hover:text-gray-300">Promotion</Link>
+        <div className="md:hidden px-4 pb-4 space-y-9 ">
+          <div className=" flex justify-center text-2xl space-x-16 font-bold text-black hover:text-blue-950  ">
+            <Link to='/' className="hover:text-gray-300">Home</Link>
+            <Link to='/promotion' className="hover:text-gray-300">Promotion</Link>
+            </div>
+          
           {/* Mobile Category Dropdown */}
-            <select className="w-full bg-gray-800 text-white p-2 rounded" onChange={handleCategoryChange} defaultValue="" >
+          <div className="flex space-x-4">
+            <select className="w-full bg-red-400 text-black text-2xl p-2 rounded" onChange={handleCategoryChange} defaultValue="" >
               <option value="" disabled>Select category</option>
               <option value="/phones">Phones</option>
               <option value="/tablets">Tablets</option>
               <option value="/laptops">Laptops</option>
             </select>
+            <Link className='text-3xl text-black p-1 bg-blue-100 rounded-2xl hover:bg-green-300 ' to='/cart'><h2><BiCartAdd/></h2></Link>
+          </div>
+            
         </div>
       )}
     </nav>
