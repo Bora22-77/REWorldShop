@@ -29,7 +29,7 @@ const ProductDetail = ({props}) => {
           <p>(168)</p>
         </div>
         <h2 className='text-4xl text-yellow-950'>${props.oldPrice}</h2>
-        <button className='px-5 py-3 text-2xl text-black bg-blue-500 mt-5'>Add to Cart</button>
+        <button onClick={() => {addToCart(props.id)}} className='px-5 py-3 text-2xl text-black bg-blue-500 mt-5'>Add to Cart</button>
      </div>
     </div>
   )

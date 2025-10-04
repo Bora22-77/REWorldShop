@@ -77,19 +77,24 @@ const getdefaulCart = () =>{
   for(let i=0;i<products.length+1;i++){
     cart[i]=0;
   }
+  return cart;
 }
 const [cartItems,setcartItems] = useState(getdefaulCart());
 const addToCart = (itemId) => {
         setcartItems((prev)=>({...prev,[itemId]: (prev[itemId] || 0 )+1}));
-        console.log(cartItems);
+        //console.log(cartItems);
     }
     const removeFromCart = (itemId) => {
         setcartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
     }
 
+    const getTotalAmount = () => {
+      const totalAmount = cartItems.length;
+      return totalAmount;
+    }
 
   return (
-    <ProductContext.Provider value={{ products, setProducts, loading,cartItems,addToCart,removeFromCart }}>
+    <ProductContext.Provider value={{ products, setProducts, loading,cartItems,addToCart,removeFromCart,getTotalAmount }}>
       {children}
     </ProductContext.Provider>
   );

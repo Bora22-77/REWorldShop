@@ -2,10 +2,11 @@ import React from 'react'
 import { useProducts } from '../../Context/ProductContext'
 
 const CartItem = () => {
-  const {products} = useProducts();
+  const {products,cartItems,getTotalAmount} = useProducts();
+  console.log(cartItems);
   return (
     <div>
-      <div className="">
+      <div className="flex">
         <p>Product</p>
         <p>Name</p>
         <p>Price</p>
@@ -13,13 +14,22 @@ const CartItem = () => {
         <p>Total</p>
         <p>Remove</p>
       </div>
+      <hr />
       <ul className="">
         {
-          products.map((f) =>{
-            if(CartItem[f.id>0]){
-              <img src={products.image} alt="" />
+          products.map((e) =>{
+            if(cartItems[e.id]>0){
+              return (
+                <li key={e.id} className='flex mb-15'>
+                  <img src={e.image} alt="" className='w-36'/>
+                  <p>{e.name}</p>
+                  <p>${e.oldPrice}</p>
+                  <p>{cartItems[e.id]}</p>
+                </li>
+                
+              )
             }
-          } )
+          })
         }
       </ul>
     </div>
