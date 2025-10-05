@@ -39,8 +39,8 @@ const Navbar = () => {
   return (
     <div>
         
-    <nav className="bg-gray-500 text-white mb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-gray-500 text-white ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex justify-between h-16 items-center">
 
           {/* Logo */}
@@ -64,10 +64,11 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none text-2xl">
+          <div className="md:hidden flex space-x-8">
+            <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none text-4xl">
               {isOpen ? "✖" : "☰"}
             </button>
+            <Link className='text-3xl text-black p-1 bg-blue-100 rounded-2xl hover:bg-green-300 ' to='/cart'><h2><BiCartAdd/></h2></Link>
           </div>
         </div>
       </div>
@@ -88,7 +89,7 @@ const Navbar = () => {
               <option value="/tablets">Tablets</option>
               <option value="/laptops">Laptops</option>
             </select>
-            <Link className='text-3xl text-black p-1 bg-blue-100 rounded-2xl hover:bg-green-300 ' to='/cart'><h2><BiCartAdd/></h2></Link>
+            
           </div>
             
         </div>
