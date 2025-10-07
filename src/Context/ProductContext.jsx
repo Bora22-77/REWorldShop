@@ -89,10 +89,15 @@ const addToCart = (itemId) => {
     }
 
     const getTotalAmount = () => {
-      const totalAmount = cartItems.length;
+      let totalAmount = 0;
+      for(const item in cartItems){
+        if(cartItems[item] > 0){
+          let InformationItems = products.find((product) =>  product.id === Number(item));
+          totalAmount += InformationItems.oldPrice * cartItems[item];
+        }
+      }
       return totalAmount;
     }
-
   return (
     <ProductContext.Provider value={{ products, setProducts, loading,cartItems,addToCart,removeFromCart,getTotalAmount }}>
       {children}

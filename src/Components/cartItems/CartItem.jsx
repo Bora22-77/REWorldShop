@@ -1,8 +1,8 @@
 import React from 'react'
 import { useProducts } from '../../Context/ProductContext'
-
+import remove_icon from '../Assets/remove_icon.png'
 const CartItem = () => {
-  const {products,cartItems,getTotalAmount} = useProducts();
+  const {products,cartItems,getTotalAmount,removeFromCart} = useProducts();
   console.log(cartItems);
   return (
     <div>
@@ -26,6 +26,8 @@ const CartItem = () => {
                   <p className='text-base sm:text-xl md:text-2xl lg:text-3xl  relative right-25 sm:right-32 md:right-35 lg:right-55'>{e.name}</p>
                   <p className='text-base sm:text-xl md:text-2xl lg:text-3xl  relative right-40 sm:right-54 md:right-60 lg:right-100'>${e.oldPrice}</p>
                   <p className='text-base sm:text-xl md:text-2xl lg:text-3xl  relative right-45 sm:right-60 md:right-70 lg:right-120'>{cartItems[e.id]}</p>
+                  <p className='text-base sm:text-xl md:text-2xl lg:text-3xl  relative right-45 sm:right-60 md:right-70 lg:right-120'>{getTotalAmount()}</p>
+                  <img src={remove_icon} alt="" onClick={() => {removeFromCart(e.id)}} className='text-base sm:text-xl md:text-2xl lg:text-3xl  relative right-45 sm:right-60 md:right-70 lg:right-120' />
                 </li>
                   <hr className='mt-5'/>
                 </div>
