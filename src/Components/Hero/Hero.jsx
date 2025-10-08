@@ -6,25 +6,28 @@ import Iphone_hero from '../Assets/Iphone_hero.avif'
 const Hero = () => {
   return (
     // flex flex-col justify-center gap-5 pl-10 sm:pl-20 md:pl-28 lg:pl-36 xl:pl-44 leading-[1.1] flex-1
-    <div>
-      <div className="hero font-serif bg-gradient-to-t from-blue-400 via-blue-300 to-purple-100  h-max sm:h-max md:h-max lg:h-screen  ">
+    //bg-gradient-to-t from-blue-400 via-blue-300 to-purple-100
+    <div className="bg-no-repeat bg-center bg-cover bg-fixed  " style={{
+    backgroundImage: "url('https://www.mastertechkh.com/storage/silders/ymwXWohiEtHF6FaiW9sy5op9MllFXx-metaMTdfX2J1bmRsZXMuanBn-.jpg')"
+  }}>
+      <div className="hero font-serif   h-max sm:h-max md:h-max lg:h-screen  ">
         <div className="max-w-7xl mx-auto ">
-          <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-5xl flex justify-center sm:justify-center  '>Welcome to RE World</h1>
-          <h2 className='text-xl sm:text-lg md:text-3xl lg:text-5xl flex justify-center'>We have Electronic products</h2>
+          <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-5xl flex justify-center sm:justify-center  text-white'>Welcome to RE World</h1>
+          <h2 className='text-xl sm:text-lg md:text-3xl lg:text-5xl flex justify-center text-white'>We have Electronic products</h2>
         </div>
 
       <div className="flex justify-between mt-6">
           <div className=" items-center w-1/2 rounded-2xl p-7 sm:p-8 md:p-11">
             <div className="flex">
-              <p className='mb-9 text-4xl text-fuchsia-950 font-semibold'>Phones</p>
+              <p className='mb-9 text-4xl text-white font-semibold'>Phones</p>
               <span><img src={buy} alt="" /></span>
             </div>
             <div className="flex">
-              <p  className='mb-9 text-4xl text-fuchsia-950 font-semibold'>Tablets</p>
+              <p  className='mb-9 text-4xl text-white font-semibold'>Tablets</p>
               <span><img src={buy} alt="" /></span>
             </div>
             <div className="flex">
-              <p className="mb-9 text-4xl text-fuchsia-950 font-semibold">Laptops</p>
+              <p className="mb-9 text-4xl text-white font-semibold">Laptops</p>
               <span><img src={buy} alt="" /></span>
             </div>
           </div>

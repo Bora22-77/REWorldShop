@@ -6,6 +6,9 @@ const CartItem = () => {
   const { products, cartItems, getTotalAmount, removeFromCart } = useProducts();
 
   return (
+    <div  className="bg-no-repeat bg-center bg-cover bg-fixed  " style={{
+    backgroundImage: "url('https://images.unsplash.com/photo-1557821552-17105176677c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FydHxlbnwwfHwwfHx8MA%3D%3D')"
+  }}>
     <div className="px-4 md:px-10 lg:px-20 py-6">
       {/* Header Row */}
       <div className="hidden md:grid grid-cols-6 font-bold text-lg border-b border-gray-300 pb-3">
@@ -73,11 +76,12 @@ const CartItem = () => {
 
       {/* Total Section */}
       <div className="mt-8 text-right">
-        <h2 className="text-xl md:text-2xl font-semibold">
+        <h2 className="text-xl md:text-2xl font-bold text-emerald-950">
           Total: ${getTotalAmount().toFixed(2)}
         </h2>
       </div>
     </div>
+  </div>
   );
 };
 
