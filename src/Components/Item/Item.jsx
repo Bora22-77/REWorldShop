@@ -6,7 +6,7 @@ const Item = ({id,name,image,oldPrice,newPrice} ) => {
     <div>
       <div className="p-4 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-200">
   {/* Product Image */}
-  <Link to={`/product/${id}`}>
+  <Link to={`/product/${id}`} onClick={() => window.scrollTo(0,0)}>
     <img
       src={image}
       alt={name}
@@ -21,11 +21,11 @@ const Item = ({id,name,image,oldPrice,newPrice} ) => {
 
   {/* Price Section */}
   <div className="flex items-center gap-3 mt-1">
-    <span className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">
+    <span className=" text-base sm:text-lg md:text-xl text-red-500 font-medium line-through">
       ${oldPrice}
     </span>
     {newPrice && (
-      <span className="text-base sm:text-lg md:text-xl text-red-500 font-medium line-through">
+      <span className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">
         ${newPrice}
       </span>
     )}

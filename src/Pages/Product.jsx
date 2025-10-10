@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import ProductDetail from '../Components/productDetail/productDetail';
 import { useProducts } from '../Context/ProductContext';
 import Breadcrumb from '../Components/Breadcrumb/Breadcrumb';
+import RelateProduct from '../Components/RelateProduct/RelateProduct';
 const Product = () => {
    const { products } = useProducts();
   const { productId } = useParams();
@@ -17,6 +18,7 @@ console.log(product);
       <div>
        <Breadcrumb props={product}/>
        <ProductDetail props={product}/> 
+       <RelateProduct/>
       </div>
     </div>
   )

@@ -7,6 +7,9 @@ import ShopCategory from './Pages/ShopCategory'
 import Product from './Pages/Product'
 import Footer from './Components/Footer/Footer'
 import Cart from './Pages/Cart'
+import phone_banner from './Components/Assets/phone_banner.png'
+import laptop_banner from './Components/Assets/laptop_banner.avif'
+import tablet_banner from './Components/Assets/tablet_banner.avif'
 
 const App = () => {
   return (
@@ -17,9 +20,9 @@ const App = () => {
         <Routes>
           <Route path='/' element={ <Home/>}/>
           <Route path='/promotion' element={<Promotion/>}/>
-          <Route path='/phones' element={<ShopCategory category="Phone"/>}/>
-          <Route path='/tablets' element={<ShopCategory category="Tablet"/>}/>
-          <Route path='/laptops' element={<ShopCategory category="Laptop"/>}/>
+          <Route path='/phones' element={<ShopCategory banner={phone_banner} category="Phone" />}/>
+          <Route path='/tablets' element={<ShopCategory banner={tablet_banner} category="Tablet" />}/>
+          <Route path='/laptops' element={<ShopCategory banner={laptop_banner} category="Laptop" />}/>
           <Route path="/product" element={ <Product/>}>
             <Route path=":productId" element={ <Product/>}/>
           </Route>

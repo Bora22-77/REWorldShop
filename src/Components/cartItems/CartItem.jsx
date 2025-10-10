@@ -24,7 +24,7 @@ const CartItem = () => {
       <ul className="mt-4 space-y-4">
         {products.map((e) => {
           if (cartItems[e.id] > 0) {
-            const itemTotal = e.oldPrice * cartItems[e.id];
+            const itemTotal = e.newPrice * cartItems[e.id];
             return (
               <li
                 key={e.id}
@@ -46,7 +46,7 @@ const CartItem = () => {
 
                 {/* Price */}
                 <p className="text-center text-gray-700 hidden md:block">
-                  ${e.oldPrice}
+                  ${e.newPrice}
                 </p>
 
                 {/* Quantity */}

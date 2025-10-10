@@ -93,7 +93,7 @@ const addToCart = (itemId) => {
       for(const item in cartItems){
         if(cartItems[item] > 0){
           let InformationItems = products.find((product) =>  product.id === Number(item));
-          totalAmount += InformationItems.oldPrice * cartItems[item];
+          totalAmount += InformationItems.newPrice * cartItems[item];
         }
       }
       return totalAmount;
