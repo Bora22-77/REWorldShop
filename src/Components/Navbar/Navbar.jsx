@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'; 
 import cart from '../Assets/cart.jpg'
 import { BiCartAdd } from 'react-icons/bi';
+import { useProducts } from '../../Context/ProductContext';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
+    const {getTotalCartItems} = useProducts();
     const pathToCategory = {
     "/phones": "/phones",
     "/tablets": "/tablets",
@@ -61,6 +63,7 @@ const Navbar = () => {
               </select>
            <h1>{minutes}:{seconds < 10 ? "0" : ""}{seconds}</h1>
           <Link className='text-3xl' to='/cart'><h2><BiCartAdd/></h2></Link>
+          <div className="relative bottom-3 right-7 p-0.5  bg-blue-500 rounded-2xl">{getTotalCartItems()}</div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -69,6 +72,7 @@ const Navbar = () => {
               {isOpen ? "✖" : "☰"}
             </button>
             <Link className='text-3xl text-black p-1 bg-blue-100 rounded-2xl hover:bg-green-300 ' to='/cart'><h2><BiCartAdd/></h2></Link>
+            <div className="relative bottom-3 right-7   bg-blue-500 rounded-3xl ">{getTotalCartItems()}</div>
           </div>
         </div>
       </div>
@@ -77,8 +81,8 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden px-4 pb-4 space-y-9 ">
           <div className=" flex justify-center text-2xl space-x-16 font-bold text-black hover:text-blue-950  ">
-            <Link to='/' className="hover:text-gray-300">Home</Link>
-            <Link to='/promotion' className="hover:text-gray-300">Promotion</Link>
+            <Link to='/' className="text-amber-50">Home</Link>
+            <Link to='/promotion' className="text-amber-50">Promotion</Link>
             </div>
           
           {/* Mobile Category Dropdown */}

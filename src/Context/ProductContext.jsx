@@ -98,8 +98,18 @@ const addToCart = (itemId) => {
       }
       return totalAmount;
     }
+
+    const getTotalCartItems = () =>{
+        let totalItem = 0;
+        for(const item in cartItems){
+            if(cartItems[item]>0){
+                totalItem += cartItems[item];
+            }
+        }
+         return totalItem;
+    }
   return (
-    <ProductContext.Provider value={{ products, setProducts, loading,cartItems,addToCart,removeFromCart,getTotalAmount }}>
+    <ProductContext.Provider value={{ products, setProducts, loading,cartItems,addToCart,removeFromCart,getTotalAmount,getTotalCartItems }}>
       {children}
     </ProductContext.Provider>
   );

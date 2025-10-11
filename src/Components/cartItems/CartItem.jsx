@@ -4,6 +4,7 @@ import remove_icon from '../Assets/remove_icon.png'
 
 const CartItem = () => {
   const { products, cartItems, getTotalAmount, removeFromCart } = useProducts();
+  
 
   return (
     <div  className="bg-no-repeat bg-center bg-cover bg-fixed mb-20 " style={{
