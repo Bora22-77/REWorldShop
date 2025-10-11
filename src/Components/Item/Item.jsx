@@ -22,7 +22,7 @@ const Item = ({id,name,image,oldPrice,newPrice} ) => {
   {/* Price Section */}
   <div className="flex items-center gap-3 mt-1">
     <span className=" text-base sm:text-lg md:text-xl text-red-500 font-medium line-through">
-      ${oldPrice}
+      {oldPrice}
     </span>
     {newPrice && (
       <span className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">

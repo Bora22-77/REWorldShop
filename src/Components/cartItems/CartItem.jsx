@@ -6,7 +6,7 @@ const CartItem = () => {
   const { products, cartItems, getTotalAmount, removeFromCart } = useProducts();
 
   return (
-    <div  className="bg-no-repeat bg-center bg-cover bg-fixed  " style={{
+    <div  className="bg-no-repeat bg-center bg-cover bg-fixed mb-20 " style={{
     backgroundImage: "url('https://images.unsplash.com/photo-1557821552-17105176677c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FydHxlbnwwfHwwfHx8MA%3D%3D')"
   }}>
     <div className="px-4 md:px-10 lg:px-20 py-6">
@@ -64,7 +64,7 @@ const CartItem = () => {
                   <img
                     src={remove_icon}
                     alt="remove"
-                    className="w-6 h-6 cursor-pointer hover:scale-110 transition-transform"
+                    className="w-6 h-6 cursor-pointer hover:scale-130 transition-transform"
                     onClick={() => removeFromCart(e.id)}
                   />
                 </div>
@@ -76,7 +76,7 @@ const CartItem = () => {
 
       {/* Total Section */}
       <div className="mt-8 text-right">
-        <h2 className="text-xl md:text-2xl font-bold text-emerald-950">
+        <h2 className="text-xl md:text-2xl font-bold text-white">
           Total: ${getTotalAmount().toFixed(2)}
         </h2>
       </div>
