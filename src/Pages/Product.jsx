@@ -1,6 +1,6 @@
 
 import { useParams } from 'react-router-dom';
-import ProductDetail from '../Components/productDetail/productDetail';
+import ProductDetail from '../Components/productDetail/ProductDetail';
 import { useProducts } from '../Context/ProductContext';
 import Breadcrumb from '../Components/Breadcrumb/Breadcrumb';
 import RelateProduct from '../Components/RelateProduct/RelateProduct';
