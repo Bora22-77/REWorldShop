@@ -9,10 +9,12 @@ const ShopCategory = ({category,banner}) => {
   const filteredData = products.filter(item => item.category === category)
   return (
     <div className='max-w-8xl max-auto px-5 py-12 space-y-12'>
-      <div className="bg-gradient-to-r from-blue-400 via-orange-200-500 to-yellow-200">
-        <h1 className='text-7xl justify-center text-center font-bold bg-gradient-to-r from-green-800 via-gray-500 to-yellow-200 bg-clip-text text-transparent'>New Arrival</h1>
+      
+      <div className="bg-no-repeat bg-center bg-fixed" style={{backgroundImage: "url('https://n1.octostatic.com/cdn-cgi/image/width=3840,fit=contain,quality=85,format=auto/nextopart/static/hashed/hero-banner-solid.c1dc78c4a3.png')"}}>
+        <h2 className='text-7xl justify-center text-center font-bold bg-gradient-to-r from-black via-blue-500 to-blue-700 bg-clip-text text-transparent'>{category}</h2>
+        <h3 className='text-7xl justify-center text-center font-bold bg-gradient-to-r from-black via-blue-500 to-blue-700 bg-clip-text text-transparent'>New Arrival</h3>
       </div>
-      <img src={banner} alt="" className='mt-2 mb-11 rounded-2xl'/>
+      <img src={banner} alt="" className='mt-2 mb-11 rounded-2xl w-full'/>
       <ul className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4  bg-gradient-to-b from-gray-200 via-purple-300 to-blue-300 ">
         {
           filteredData.map((item,index)=>(

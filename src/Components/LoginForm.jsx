@@ -7,21 +7,23 @@ function LoginForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("✅ handleSubmit triggered");
     setError("");
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/token/", {
+      console.log("🟢 Before fetch");
+      const response = await fetch("http://127.0.0.1:8000/token/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
       });
-
+      console.log("🟢 After fetch");
       if (!response.ok) {
         throw new Error("Invalid username or password");
       }
 
       const data = await response.json();
-
+       console.log("🟢 Token data:", data);
       // store tokens
       localStorage.setItem("access", data.access);
       localStorage.setItem("refresh", data.refresh);

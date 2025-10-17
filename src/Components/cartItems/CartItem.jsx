@@ -7,7 +7,7 @@ const CartItem = () => {
   
 
   return (
-    <div  className="bg-no-repeat bg-center bg-cover bg-fixed mb-20 " style={{
+    <div  className="bg-no-repeat bg-center bg-cover bg-fixed mb-20 max-w-8xl max-auto px-5 py-12 space-y-12" style={{
     backgroundImage: "url('https://images.unsplash.com/photo-1557821552-17105176677c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FydHxlbnwwfHwwfHx8MA%3D%3D')"
   }}>
     <div className="px-4 md:px-10 lg:px-20 py-6">
@@ -75,12 +75,37 @@ const CartItem = () => {
         })}
       </ul>
 
-      {/* Total Section */}
-      <div className="mt-8 text-right">
-        <h2 className="text-xl md:text-2xl font-bold text-white">
-          Total: ${getTotalAmount().toFixed(2)}
-        </h2>
-      </div>
+      <div className=" bg-gray-200 mt-9 px-5 py-12 rounded-3xl mb-5 md:flex justify-between max-w-8xl max-auto  ">
+            <div className=" w-1/2 mr-4">
+                <h1 className="text-xl md:text-2xl font-bold text-red-900 mb-10">Cart Totals</h1>
+                <div>
+                        <div className="flex justify-between">
+                             <p className="text-xl md:text-2xl font-bold text-black">Subtotal</p>
+                             <p className="text-xl md:text-2xl font-bold text-black">${getTotalAmount()}</p>
+                         </div>
+                        <hr />
+                        <div className="flex justify-between">
+                            <p className="text-xl md:text-2xl font-bold text-black">phipping fee</p>
+                            <p className="text-xl md:text-2xl font-bold text-black">Free</p>
+                        </div>
+                        <hr />
+                        <div className="flex justify-between">
+                            <h3 className="text-xl md:text-2xl font-bold text-black">Total</h3>
+                            <h3 className="text-xl md:text-2xl font-bold text-black">${getTotalAmount()}</h3>
+                        </div>
+                   
+                    <button className="px-5 py-6 rounded-xl font-bold text-white mt-7 bg-red-800">PROCEED TO CHECKOUT</button>
+                </div>
+            </div>
+            <div className=" flex flex-col ml-4 bg-blue-100 rounded-2xl ">
+                <p className="text-xl md:text-2xl font-bold text-black m-auto mt-7">If you have a promo code, Enter it here</p>
+                <div className="mt-6">
+                    <input type="text" placeholder='promo code' className="text-xl md:text-2xl font-bold text-black bg-white rounded-xl px-8 py-3"/>
+                    <button className="text-xl md:text-2xl font-bold  bg-blue-800 text-white rounded-xl px-8 py-3">Submit</button>
+                </div>
+            </div>
+
+        </div>
     </div>
   </div>
   );

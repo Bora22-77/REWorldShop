@@ -7,9 +7,10 @@ import ShopCategory from './Pages/ShopCategory'
 import Product from './Pages/Product'
 import Footer from './Components/Footer/Footer'
 import Cart from './Pages/Cart'
-import phone_banner from './Components/Assets/phone_banner.png'
+import phone_banner from './Components/Assets/phone.webp'
 import laptop_banner from './Components/Assets/laptop_banner.avif'
 import tablet_banner from './Components/Assets/tablet_banner.avif'
+import Register from './Components/Register'
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
             <Route path=":productId" element={ <Product/>}/>
           </Route>
           <Route path="/cart" element={<Cart/>}/>
+          <Route path="/register" element={<Register/>}/>
           {/* <Route path="/product" element={<Product/>} /> */}
           {/* <Route path="/product/:productId" element={<Product/>}/> */}
         </Routes>

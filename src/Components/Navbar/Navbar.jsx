@@ -63,7 +63,9 @@ const Navbar = () => {
               </select>
            <h1>{minutes}:{seconds < 10 ? "0" : ""}{seconds}</h1>
           <Link className='text-3xl' to='/cart'><h2><BiCartAdd/></h2></Link>
+          
           <div className="relative bottom-3 right-7 p-0.5  bg-blue-500 rounded-2xl">{getTotalCartItems()}</div>
+          <Link className='text-black bg-white px-9 py-4 rounded-2xl text-xl font-bold pointer hover:bg-blue-600' to='/register'>Register</Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -72,7 +74,8 @@ const Navbar = () => {
               {isOpen ? "✖" : "☰"}
             </button>
             <Link className='text-3xl text-black p-1 bg-blue-100 rounded-2xl hover:bg-green-300 ' to='/cart'><h2><BiCartAdd/></h2></Link>
-            <div className="relative bottom-3 right-7   bg-blue-500 rounded-3xl ">{getTotalCartItems()}</div>
+            <div className="relative bottom-3 right-7     ">{getTotalCartItems()}</div>
+             <Link className='text-black bg-white px-3 py-4 rounded-2xl  font-bold pointer hover:bg-blue-600' to='/register'>Register</Link>
           </div>
         </div>
       </div>
