@@ -6,6 +6,8 @@ const Register = () => {
     email: "",
     password: "",
   });
+  const [loading, setLoading] = useState(false);
+
 
   const [message, setMessage] = useState("");
 
@@ -15,6 +17,10 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // ✅ Show loading message
+    setLoading(true);
+
 
     try {
       const res = await fetch("https://re-world-backend.onrender.com/register/", {
@@ -37,6 +43,8 @@ const Register = () => {
     } catch (error) {
       console.error("Fetch error:", error);
       setMessage("⚠️ Server error, please try again later.");
+    }finally{
+       setLoading(false);
     }
   };
 
@@ -81,11 +89,12 @@ const Register = () => {
         required
       />
 
-      <button
+      <button 
+       disabled={loading}
         type="submit"
         className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-200"
       >
-        Register
+        {loading ? "Registering..." : "Register"}
       </button>
     </div>
 
