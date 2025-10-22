@@ -22,7 +22,7 @@ const TestNew = () => {
     //     <div class="ball"></div>
     // </div>
     //---------------------------------------
-    <div class="typewriter"><span>Welcome to my portfolio</span></div>
+    <div class="typewriter"><span></span></div>
 
   )
 }
